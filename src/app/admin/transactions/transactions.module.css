@@ -76,17 +76,6 @@
   flex-wrap: wrap;
 }
 
-.layout {
-  flex-direction: column;
-}
-
-.main {
-  padding: 0.75rem 0.5rem;
-}
-
-.sidebar {
-}
-
 .searchField {
   display: flex;
   flex-direction: column;
