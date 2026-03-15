@@ -1,7 +1,14 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0.25rem;
+  }
 }
 
 .formCard {
@@ -87,4 +94,26 @@
   color: #DC2626;
   font-weight: 600;
   margin-top: 0.5rem;
+}
+@media (max-width: 768px) {
+  .formCard {
+    padding: 1rem 0.5rem;
+  }
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  .clientsTable th, .clientsTable td {
+    padding: 0.6rem 0.3rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+  .clientsTable td:first-child {
+    white-space: normal;
+    min-width: 70px;
+    font-size: 0.75rem;
+  }
+  .clientsTable td:nth-child(2) { /* loginId */
+    font-size: 0.65rem;
+  }
 }
