@@ -33,12 +33,15 @@ export default async function InventoryPage({
           <thead>
             <tr>
               <th>브랜드</th>
+              <th>타이어명</th>
               <th>규격</th>
-              <th>패턴</th>
+              <th>하중/속도</th>
+              <th>Ply</th>
               <th>DOT</th>
-              <th style={{ width: '130px' }}>현재 단가(원)</th>
-              <th style={{ width: '100px' }}>현재 재고(본)</th>
-              <th style={{ width: '150px' }}>관리</th>
+              <th>생산지</th>
+              <th style={{ width: '110px' }}>단가(원)</th>
+              <th style={{ width: '80px' }}>재고(본)</th>
+              <th style={{ width: '100px' }}>관리</th>
             </tr>
           </thead>
           <tbody>
