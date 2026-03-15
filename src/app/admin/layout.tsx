@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { verifySession, deleteSession } from '@/lib/session'
 import { redirect } from 'next/navigation'
 import styles from './adminLayout.module.css'
+import AdminNotification from '@/components/AdminNotification'
 
 export default async function AdminLayout({ children }: { children: ReactNode }) {
   const session = await verifySession()
