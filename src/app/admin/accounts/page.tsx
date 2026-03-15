@@ -1,3 +1,6 @@
+import prisma from '@/lib/prisma'
+import { createAdminAccount } from './actions'
+import styles from '../inventory/inventory.module.css'
 import AdminRow from './AdminRow'
 
 export default async function AdminAccountsPage() {
