@@ -1,6 +1,3 @@
-import type { NextConfig } from "next";
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const withPWA = require('next-pwa')({
   dest: 'public',
   register: true,
@@ -8,10 +5,10 @@ const withPWA = require('next-pwa')({
   disable: process.env.NODE_ENV === 'development'
 });
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   // Turbopack 경고를 해결하기 위해 빈 구성을 추가합니다.
-  // @ts-ignore
   turbopack: {},
 };
 
-export default withPWA(nextConfig);
+module.exports = withPWA(nextConfig);
