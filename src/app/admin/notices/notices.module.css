@@ -1,0 +1,139 @@
+.container {
+  padding: 1rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  margin-bottom: 2rem;
+}
+
+.formCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.input {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.textarea {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  min-height: 120px;
+  resize: vertical;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.submitBtn {
+  background: var(--color-navy);
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.noticeItem {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 10px;
+  border-left: 4px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.important {
+  border-left-color: #e11d48;
+  background: #fff1f2;
+}
+
+.noticeHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.importantBadge {
+  background: #e11d48;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.inputTitle {
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  background: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.textareaSmall {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1rem;
+  resize: none;
+}
+
+.saveBtn {
+  background: #166534;
+  color: white;
+  padding: 6px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.deleteBtn {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 6px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -1,0 +1,126 @@
+.tableContainer {
+  background: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.table th, .table td {
+  padding: 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-grey-light);
+  white-space: nowrap;
+}
+
+.table th {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr:hover td {
+  background-color: #f9fafb;
+}
+
+.updateForm {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.input {
+  padding: 0.6rem;
+  border: 1px solid var(--color-grey);
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.saveBtn {
+  background-color: #3b82f6; /* Changed to blue for standard save */
+  color: white;
+  padding: 0.6rem 0.8rem;
+  border-radius: 4px;
+  font-weight: 700;
+  transition: opacity 0.2s;
+  width: 100%;
+}
+
+.deleteBtn {
+  background-color: #ef4444;
+  color: white;
+  padding: 0.6rem 0.8rem;
+  border-radius: 4px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.saveBtn:hover {
+  opacity: 0.9;
+}
+
+.searchContainer {
+  display: flex;
+  gap: 1.5rem;
+  background: white;
+  padding: 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e5e7eb;
+  align-items: flex-end;
+}
+
+.searchField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.searchField label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.searchInput {
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--color-navy);
+  box-shadow: 0 0 0 2px rgba(10, 25, 41, 0.1);
+}
+
+.searchBtn {
+  background: var(--color-navy);
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  height: 38px; /* Match input height roughly */
+}
+
+.searchBtn:hover {
+  opacity: 0.9;
+}

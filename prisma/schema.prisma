@@ -1,0 +1,94 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  loginId   String   @unique
+  password  String   // Hashed password
+  name      String   // Company or Representative Name
+  role      String   @default("CLIENT") // "ADMIN" or "CLIENT"
+  tier      String   @default("STANDARD") // e.g., "STANDARD", "PREMIUM", "VIP"
+  phone     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  orders    Order[]
+  stockTransactions StockTransaction[]
+}
+
+model Product {
+  id               String             @id @default(cuid())
+  spec             String             // e.g., "225/55R17"
+  normalized_spec  String             // e.g., "2255517" for Smart Search
+  brand            String
+  pattern          String?
+  price            Int                @default(0)
+  stock            Int                @default(0)
+  imageUrl         String?
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  orderItems       OrderItem[]
+  stockTransactions StockTransaction[]
+
+  @@index([normalized_spec])
+}
+
+model StockTransaction {
+  id        String   @id @default(cuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  userId    String?  // Associated client (optional)
+  user      User?    @relation(fields: [userId], references: [id])
+  type      String   // IN, OUT, ADJUST
+  quantity  Int
+  note      String?
+  createdAt DateTime @default(now())
+}
+
+model Order {
+  id          String      @id @default(cuid())
+  userId      String
+  user        User        @relation(fields: [userId], references: [id])
+  status      String      @default("PENDING") // PENDING, PROCESSING, COMPLETED, CANCELLED
+  totalAmount Int         @default(0)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  items       OrderItem[]
+}
+
+model OrderItem {
+  id        String   @id @default(cuid())
+  orderId   String
+  order     Order    @relation(fields: [orderId], references: [id])
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+  quantity  Int
+  price     Int      // Snapshot of price at time of order
+}
+
+
+model Banner {
+  id        String   @id @default(cuid())
+  title     String?
+  imageUrl  String   // URL of the banner image
+  link      String?  // Optional click-through link
+  isActive  Boolean  @default(true)
+  priority  Int      @default(0) // Order of display
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Notice {
+  id          String   @id @default(cuid())
+  title       String
+  content     String   @db.Text
+  isImportant Boolean  @default(false) // For highlighted/sticky notices
+  authorId    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
