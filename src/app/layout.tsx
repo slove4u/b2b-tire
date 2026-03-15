@@ -20,6 +20,8 @@ export const viewport: Viewport = {
   userScalable: false,
 };
 
+import InstallPrompt from "@/components/InstallPrompt";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,6 +31,7 @@ export default function RootLayout({
     <html lang="ko">
       <body>
         <main>{children}</main>
+        <InstallPrompt />
       </body>
     </html>
   );
