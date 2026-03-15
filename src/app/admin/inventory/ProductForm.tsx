@@ -19,7 +19,7 @@ export default function ProductForm() {
     <div className={styles.formCard} style={{ marginBottom: '2rem', padding: '1.5rem', background: '#fff', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', borderLeft: '4px solid #10B981' }}>
       <h2 style={{ fontSize: '1.1rem', marginBottom: '1rem', fontWeight: 800 }}>신규 타이어 상품 등록</h2>
       <form ref={formRef} action={formAction}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '0.8rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))', gap: '0.8rem' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
             <label style={{ fontSize: '0.75rem', fontWeight: 700 }}>브랜드</label>
             <input type="text" name="brand" className={styles.input} placeholder="예: 넥센" style={{ padding: '0.4rem' }} required />
