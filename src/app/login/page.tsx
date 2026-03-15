@@ -23,7 +23,7 @@ export default function LoginPage() {
     <div className={styles.container}>
       <div className={styles.loginBox}>
         <div className={styles.header}>
-          <h1>남서울상사 B2B 플랫폼</h1>
+          <h1>남서울B2B 스마트 주문 시스템</h1>
           <p>거래처 전용 시스템입니다.</p>
         </div>
         

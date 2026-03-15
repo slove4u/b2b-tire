@@ -1,6 +1,6 @@
 {
-  "name": "타이어 재고관리 시스템",
-  "short_name": "타이어관리",
+  "name": "남서울B2B",
+  "short_name": "남서울B2B",
   "description": "B2B 타이어 재고 및 입출고 관리 플랫폼",
   "start_url": "/",
   "display": "standalone",

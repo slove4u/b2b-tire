@@ -137,3 +137,108 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #666;
+}
+
+.listSection {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.listTitle {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 800;
+  border: none;
+  background: transparent;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.listTitle:focus {
+  outline: none;
+  border-bottom-color: var(--color-navy);
+}
+
+.listContent {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  resize: vertical;
+  min-height: 60px;
+  line-height: 1.5;
+}
+
+.listContent:focus {
+  outline: none;
+  background: rgba(0,0,0,0.02);
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.itemFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px dashed #eee;
+}
+
+.checkboxLabelSmall {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: #999;
+  cursor: pointer;
+}
+
+.actionGroup {
+  display: flex;
+  gap: 6px;
+}
+
+.miniSaveBtn {
+  background: var(--color-navy);
+  color: white;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.miniDeleteBtn {
+  background: #f1f5f9;
+  color: #64748b;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.miniDeleteBtn:hover {
+  background: #fee2e2;
+  color: #ef4444;
+}

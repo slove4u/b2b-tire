@@ -12,6 +12,7 @@ export async function updateProduct(id: string, formData: FormData) {
   const ply_rating = formData.get('ply_rating') as string
   const origin = formData.get('origin') as string
   const description = formData.get('description') as string
+  const isEvent = formData.get('isEvent') === 'true'
 
   if (isNaN(price) || isNaN(stock)) {
     return { error: '유효한 숫자를 입력하세요.' }
@@ -33,7 +34,8 @@ export async function updateProduct(id: string, formData: FormData) {
         speed_load,
         ply_rating,
         origin,
-        description
+        description,
+        isEvent
       }
     }),
     ...(stockDiff !== 0 ? [
@@ -63,6 +65,7 @@ export async function createProduct(prevState: any, formData: FormData) {
   const ply_rating = formData.get('ply_rating') as string
   const origin = formData.get('origin') as string
   const description = formData.get('description') as string
+  const isEvent = formData.get('isEvent') === 'true'
   const price = Number(formData.get('price'))
   const stock = Number(formData.get('stock'))
 
@@ -84,6 +87,7 @@ export async function createProduct(prevState: any, formData: FormData) {
       ply_rating,
       origin,
       description,
+      isEvent,
       price,
       stock
     }

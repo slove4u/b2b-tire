@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "(주)남서울상사 B2B 타이어 재고 관리 플랫폼",
+  title: "남서울B2B - 타이어 재고 관리 플랫폼",
   description: "B2B 전용 간편 발주 및 재고 관리 시스템",
   manifest: "/manifest.json",
   appleWebApp: {

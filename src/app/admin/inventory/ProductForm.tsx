@@ -60,6 +60,10 @@ export default function ProductForm() {
             <label style={{ fontSize: '0.75rem', fontWeight: 700 }}>단축 설명</label>
             <input type="text" name="description" className={styles.input} placeholder="상품에 대한 간략한 설명" style={{ padding: '0.4rem' }} />
           </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', gridColumn: 'span 2' }}>
+            <input type="checkbox" name="isEvent" value="true" style={{ width: '18px', height: '18px', cursor: 'pointer' }} />
+            <label style={{ fontSize: '0.85rem', fontWeight: 800, color: '#be123c', cursor: 'pointer' }}>🚨 이벤트 상품으로 지정</label>
+          </div>
         </div>
         
         {state?.error && <p style={{ color: '#DC2626', marginTop: '0.5rem', fontWeight: 600 }}>{state.error}</p>}

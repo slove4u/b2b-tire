@@ -15,6 +15,7 @@ export async function createNotice(formData: FormData) {
       data: { title, content, isImportant }
     })
     revalidatePath('/admin/notices')
+    revalidatePath('/client')
     revalidatePath('/')
     return { success: true }
   } catch (e: any) {
@@ -33,6 +34,7 @@ export async function updateNotice(id: string, formData: FormData) {
       data: { title, content, isImportant }
     })
     revalidatePath('/admin/notices')
+    revalidatePath('/client')
     revalidatePath('/')
     return { success: true }
   } catch (e: any) {
@@ -44,6 +46,7 @@ export async function deleteNotice(id: string) {
   try {
     await prisma.notice.delete({ where: { id } })
     revalidatePath('/admin/notices')
+    revalidatePath('/client')
     revalidatePath('/')
     return { success: true }
   } catch (e: any) {

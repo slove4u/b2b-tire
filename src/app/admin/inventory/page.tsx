@@ -41,6 +41,7 @@ export default async function InventoryPage({
               <th>생산지</th>
               <th style={{ width: '110px' }}>단가(원)</th>
               <th style={{ width: '80px' }}>재고(본)</th>
+              <th style={{ width: '60px' }}>이벤트</th>
               <th style={{ width: '100px' }}>관리</th>
             </tr>
           </thead>

@@ -17,6 +17,7 @@ interface Product {
   description: string | null
   price: number
   stock: number
+  isEvent: boolean
 }
 
 export default function InventoryRow({ product }: { product: Product }) {
@@ -36,7 +37,7 @@ export default function InventoryRow({ product }: { product: Product }) {
 
   return (
     <tr>
-      <td><div style={{fontWeight: 700}}>{product.brand}</div></td>
+      <td>{product.isEvent && <span style={{ color: '#ef4444', fontSize: '0.7rem', fontWeight: 900, border: '1px solid #ef4444', padding: '1px 4px', borderRadius: '4px', verticalAlign: 'middle', marginRight: '4px' }}>EVENT</span>}<div style={{fontWeight: 700, display: 'inline-block'}}>{product.brand}</div></td>
       <td>{product.tire_name}</td>
       <td><div style={{fontWeight: 700}}>{product.spec}</div></td>
       
@@ -93,13 +94,22 @@ export default function InventoryRow({ product }: { product: Product }) {
             />
           </td>
           <td>
-            <input 
-              form={`row-form-${product.id}`}
-              type="number" 
+            <input type="number" 
               name="stock" 
               defaultValue={product.stock} 
               className={styles.editableInput}
               style={{ width: '50px', padding: '0.3rem' }}
+              form={`row-form-${product.id}`}
+            />
+          </td>
+          <td>
+            <input 
+              type="checkbox" 
+              name="isEvent" 
+              value="true" 
+              defaultChecked={product.isEvent}
+              form={`row-form-${product.id}`}
+              style={{ width: '18px', height: '18px' }}
             />
             {/* Hidden fields for other potential data */}
             <input type="hidden" name="tire_name" defaultValue={product.tire_name || ''} form={`row-form-${product.id}`} />
@@ -124,6 +134,7 @@ export default function InventoryRow({ product }: { product: Product }) {
           <td>{product.origin}</td>
           <td style={{ color: '#10B981', fontWeight: 800 }}>{product.price.toLocaleString()}</td>
           <td style={{ fontWeight: 800 }}>{product.stock}</td>
+          <td style={{ textAlign: 'center' }}>{product.isEvent && <span style={{ color: '#ef4444' }}>🔴</span>}</td>
           <td>
             <div style={{ display: 'flex', gap: '4px' }}>
               <button onClick={() => setIsEditing(true)} className={styles.editBtn} style={{padding: '0.4rem 0.6rem', fontSize: '0.85rem'}}>수정</button>
