@@ -105,13 +105,16 @@
 
 @media (max-width: 768px) {
   .orderCard {
-    padding: 1rem;
-    gap: 1rem;
+    padding: 0.75rem 0.4rem;
+    gap: 0.8rem;
+    border-radius: 6px;
   }
   .header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 0.7rem;
+    padding-bottom: 0.7rem;
+    margin-bottom: 0.7rem;
   }
   .headerRight {
     width: 100%;
@@ -119,13 +122,13 @@
     justify-content: space-between;
     align-items: center;
     border-top: 1px dashed var(--color-grey-light);
-    padding-top: 1rem;
+    padding-top: 0.7rem;
   }
   .clientName {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   .amount {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .itemsTable th, .itemsTable td {
     padding: 0.3rem 0.1rem;
@@ -136,40 +139,7 @@
     font-size: 0.75rem;
   }
   .statusSelect {
-    padding: 0.4rem;
-    font-size: 0.85rem;
-  }
-}
-@media (max-width: 768px) {
-  .orderCard {
-    padding: 1rem;
-    gap: 1rem;
-  }
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  .headerRight {
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px dashed var(--color-grey-light);
-    padding-top: 1rem;
-  }
-  .clientName {
-    font-size: 1.1rem;
-  }
-  .amount {
-    font-size: 1.2rem;
-  }
-  .itemsTable th, .itemsTable td {
-    padding: 0.5rem 0.2rem;
+    padding: 0.35rem;
     font-size: 0.8rem;
-  }
-  .statusSelect {
-    padding: 0.4rem;
-    font-size: 0.85rem;
   }
 }
