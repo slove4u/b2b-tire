@@ -37,6 +37,7 @@ export default async function InventoryPage({
               <th>브랜드</th>
               <th>규격</th>
               <th>패턴</th>
+              <th>DOT</th>
               <th style={{ width: '130px' }}>현재 단가(원)</th>
               <th style={{ width: '100px' }}>현재 재고(본)</th>
               <th style={{ width: '150px' }}>관리</th>
@@ -50,6 +51,16 @@ export default async function InventoryPage({
                 <td>{product.pattern}</td>
                 <td>
                   <form id={`edit-form-${product.id}`} action={async (formData) => { 'use server'; await updateProduct(product.id, formData); }}></form>
+                  <input 
+                    form={`edit-form-${product.id}`}
+                    type="text" 
+                    name="dot" 
+                    defaultValue={product.dot || ''} 
+                    className={styles.input}
+                    style={{ width: '60px' }}
+                  />
+                </td>
+                <td>
                   <input 
                     form={`edit-form-${product.id}`}
                     type="number" 

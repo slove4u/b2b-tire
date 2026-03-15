@@ -15,7 +15,7 @@ export default async function AdminLayout({ children }: { children: ReactNode })
     <div className={styles.layout}>
       {/* Sidebar Navigation */}
       <aside className={styles.sidebar}>
-        <div className={styles.logo}>ADMIN PANEL</div>
+        <Link href="/admin" className={styles.logo}>ADMIN PANEL</Link>
         
         <nav className={styles.navMenu}>
           <Link href="/admin" className={styles.navItem}>

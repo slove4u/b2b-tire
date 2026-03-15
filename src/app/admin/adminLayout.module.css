@@ -76,24 +76,46 @@
   .sidebar {
     width: 100%;
     padding: 1rem;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: stretch;
     gap: 1rem;
+  }
+  
+  .logo {
+    text-align: left;
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   .navMenu {
     flex-direction: row;
     overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  
+  .navMenu::-webkit-scrollbar {
+    display: none;
   }
   
   .navItem {
     white-space: nowrap;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 80px;
+    justify-content: center;
+  }
+
+  .navItem span:first-child {
+    font-size: 1.2rem;
   }
   
   .logoutBtn {
-    margin-top: 0;
-    padding: 0.5rem 1rem;
+    display: none; /* Hide in top nav for mobile, or move to main if needed */
   }
 }

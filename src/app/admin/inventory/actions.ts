@@ -6,6 +6,7 @@ import { revalidatePath } from 'next/cache'
 export async function updateProduct(id: string, formData: FormData) {
   const price = Number(formData.get('price'))
   const stock = Number(formData.get('stock'))
+  const dot = formData.get('dot') as string
 
   if (isNaN(price) || isNaN(stock)) {
     return { error: '유효한 숫자를 입력하세요.' }
@@ -19,7 +20,7 @@ export async function updateProduct(id: string, formData: FormData) {
   await prisma.$transaction([
     prisma.product.update({
       where: { id },
-      data: { price, stock }
+      data: { price, stock, dot }
     }),
     ...(stockDiff !== 0 ? [
       prisma.stockTransaction.create({
@@ -43,6 +44,7 @@ export async function createProduct(prevState: any, formData: FormData) {
   const brand = formData.get('brand') as string
   const spec = formData.get('spec') as string
   const pattern = formData.get('pattern') as string
+  const dot = formData.get('dot') as string
   const price = Number(formData.get('price'))
   const stock = Number(formData.get('stock'))
 
@@ -59,6 +61,7 @@ export async function createProduct(prevState: any, formData: FormData) {
       spec,
       normalized_spec,
       pattern,
+      dot,
       price,
       stock
     }

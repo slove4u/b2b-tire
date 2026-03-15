@@ -27,6 +27,7 @@ model Product {
   normalized_spec  String             // e.g., "2255517" for Smart Search
   brand            String
   pattern          String?
+  dot              String?            // Production year (e.g., "2424")
   price            Int                @default(0)
   stock            Int                @default(0)
   imageUrl         String?

@@ -33,6 +33,10 @@ export default function ProductForm() {
             <input type="text" name="pattern" className={styles.input} placeholder="예: AU7" />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+            <label style={{ fontSize: '0.85rem', fontWeight: 700 }}>DOT</label>
+            <input type="text" name="dot" className={styles.input} placeholder="예: 2424" />
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
             <label style={{ fontSize: '0.85rem', fontWeight: 700 }}>단가 (원)</label>
             <input type="number" name="price" className={styles.input} required />
           </div>
