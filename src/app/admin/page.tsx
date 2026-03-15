@@ -114,6 +114,37 @@ export default async function AdminDashboard() {
           </div>
         </Link>
       </div>
+
+      {/* Logout button at the bottom for mobile/accessibility */}
+      <div style={{ marginTop: '3rem', borderTop: '1px solid #eee', paddingTop: '2rem' }}>
+        <form action={async () => {
+          'use server'
+          const { deleteSession } = await import('@/lib/session')
+          const { redirect } = await import('next/navigation')
+          await deleteSession()
+          redirect('/login')
+        }}>
+          <button 
+            type="submit" 
+            style={{ 
+              width: '100%', 
+              padding: '1rem', 
+              background: '#fef2f2', 
+              color: '#dc2626', 
+              border: '1px solid #fee2e2',
+              borderRadius: '12px',
+              fontWeight: 700,
+              fontSize: '1rem',
+              cursor: 'pointer'
+            }}
+          >
+            🔓 시스템 로그아웃
+          </button>
+        </form>
+        <p style={{ textAlign: 'center', color: '#999', fontSize: '0.8rem', marginTop: '1rem' }}>
+          Tire-B2B Link v1.0 Admin Session
+        </p>
+      </div>
     </div>
   )
 }
