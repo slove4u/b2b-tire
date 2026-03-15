@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import prisma from '@/lib/prisma'
 import Link from 'next/link'
 import { verifySession, deleteSession } from '@/lib/session'
 import { redirect } from 'next/navigation'
@@ -12,12 +13,18 @@ export default async function ClientLayout({ children }: { children: ReactNode }
     redirect('/login')
   }
 
+  const topBanner = await (prisma as any).topBanner.findFirst({
+    where: { isActive: true }
+  })
+
   return (
     <div className={styles.layout}>
       {/* Top Warning Banner */}
-      <div className={styles.banner}>
-        <span>⚠️ [긴급/공지] 금호타이어 일부 규격 5% 인상. 발주 문의: <a href="tel:010-0000-0000">010-0000-0000</a></span>
-      </div>
+      {topBanner && (
+        <div className={styles.banner}>
+          <span>⚠️ {topBanner.content}</span>
+        </div>
+      )}
 
       {/* Header */}
       <header className={styles.header}>

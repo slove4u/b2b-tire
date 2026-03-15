@@ -9,35 +9,73 @@
   margin-bottom: 2rem;
 }
 
+.section {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #334155;
+  margin-bottom: 1rem;
+  padding-left: 8px;
+  border-left: 4px solid var(--color-navy);
+}
+
 .formCard {
   background: white;
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .form {
   display: flex;
-  gap: 10px;
-  margin-top: 1rem;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #64748b;
 }
 
 .input {
   padding: 0.8rem;
   border: 1px solid #ddd;
   border-radius: 6px;
-  flex: 1;
+}
+
+.textarea {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  min-height: 80px;
+  resize: vertical;
+  font-family: inherit;
 }
 
 .submitBtn {
   background: var(--color-navy);
   color: white;
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem 2rem;
   border: none;
   border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.submitBtn:hover {
+  opacity: 0.9;
 }
 
 .list {
@@ -83,10 +121,19 @@
   font-size: 0.9rem;
 }
 
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #475569;
+  cursor: pointer;
+}
+
 .saveBtn {
   background: #166534;
   color: white;
-  padding: 4px 10px;
+  padding: 6px 15px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -103,6 +150,8 @@
   cursor: pointer;
 }
 
-.deleteBtn:hover {
-  background: #fecaca;
+.hr {
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+  margin: 2rem 0;
 }
