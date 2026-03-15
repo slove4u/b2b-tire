@@ -26,8 +26,13 @@ model Product {
   spec             String             // e.g., "225/55R17"
   normalized_spec  String             // e.g., "2255517" for Smart Search
   brand            String
-  pattern          String?
+  pattern          String?            // Maintenance for old pattern field
+  tire_name        String?            // e.g., "PR2 A/S"
   dot              String?            // Production year (e.g., "2424")
+  speed_load       String?            // e.g., "101 V"
+  ply_rating       String?            // e.g., "4P"
+  origin           String?            // e.g., "베트남"
+  description      String?            // Short description
   price            Int                @default(0)
   stock            Int                @default(0)
   imageUrl         String?

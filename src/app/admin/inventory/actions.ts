@@ -7,6 +7,11 @@ export async function updateProduct(id: string, formData: FormData) {
   const price = Number(formData.get('price'))
   const stock = Number(formData.get('stock'))
   const dot = formData.get('dot') as string
+  const tire_name = formData.get('tire_name') as string
+  const speed_load = formData.get('speed_load') as string
+  const ply_rating = formData.get('ply_rating') as string
+  const origin = formData.get('origin') as string
+  const description = formData.get('description') as string
 
   if (isNaN(price) || isNaN(stock)) {
     return { error: '유효한 숫자를 입력하세요.' }
@@ -20,7 +25,16 @@ export async function updateProduct(id: string, formData: FormData) {
   await prisma.$transaction([
     prisma.product.update({
       where: { id },
-      data: { price, stock, dot }
+      data: { 
+        price, 
+        stock, 
+        dot,
+        tire_name,
+        speed_load,
+        ply_rating,
+        origin,
+        description
+      }
     }),
     ...(stockDiff !== 0 ? [
       prisma.stockTransaction.create({
@@ -43,8 +57,12 @@ export async function updateProduct(id: string, formData: FormData) {
 export async function createProduct(prevState: any, formData: FormData) {
   const brand = formData.get('brand') as string
   const spec = formData.get('spec') as string
-  const pattern = formData.get('pattern') as string
+  const tire_name = formData.get('tire_name') as string
   const dot = formData.get('dot') as string
+  const speed_load = formData.get('speed_load') as string
+  const ply_rating = formData.get('ply_rating') as string
+  const origin = formData.get('origin') as string
+  const description = formData.get('description') as string
   const price = Number(formData.get('price'))
   const stock = Number(formData.get('stock'))
 
@@ -60,8 +78,12 @@ export async function createProduct(prevState: any, formData: FormData) {
       brand,
       spec,
       normalized_spec,
-      pattern,
+      tire_name,
       dot,
+      speed_load,
+      ply_rating,
+      origin,
+      description,
       price,
       stock
     }

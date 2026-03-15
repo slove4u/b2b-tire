@@ -19,30 +19,46 @@ export default function ProductForm() {
     <div className={styles.formCard} style={{ marginBottom: '2rem', padding: '1.5rem', background: '#fff', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', borderLeft: '4px solid #10B981' }}>
       <h2 style={{ fontSize: '1.1rem', marginBottom: '1rem', fontWeight: 800 }}>신규 타이어 상품 등록</h2>
       <form ref={formRef} action={formAction}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '1rem' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
-            <label style={{ fontSize: '0.85rem', fontWeight: 700 }}>브랜드</label>
-            <input type="text" name="brand" className={styles.input} placeholder="예: 넥센" required />
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '0.8rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+            <label style={{ fontSize: '0.75rem', fontWeight: 700 }}>브랜드</label>
+            <input type="text" name="brand" className={styles.input} placeholder="예: 넥센" style={{ padding: '0.4rem' }} required />
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
-            <label style={{ fontSize: '0.85rem', fontWeight: 700 }}>규격 (Full)</label>
-            <input type="text" name="spec" className={styles.input} placeholder="예: 225/55R17" required />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+            <label style={{ fontSize: '0.75rem', fontWeight: 700 }}>타이어 이름</label>
+            <input type="text" name="tire_name" className={styles.input} placeholder="예: PR2 A/S" style={{ padding: '0.4rem' }} />
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
-            <label style={{ fontSize: '0.85rem', fontWeight: 700 }}>패턴</label>
-            <input type="text" name="pattern" className={styles.input} placeholder="예: AU7" />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+            <label style={{ fontSize: '0.75rem', fontWeight: 700 }}>규격 (Size)</label>
+            <input type="text" name="spec" className={styles.input} placeholder="예: 225/55R17" style={{ padding: '0.4rem' }} required />
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
-            <label style={{ fontSize: '0.85rem', fontWeight: 700 }}>DOT</label>
-            <input type="text" name="dot" className={styles.input} placeholder="예: 2424" />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+            <label style={{ fontSize: '0.75rem', fontWeight: 700 }}>하중/속도 기호</label>
+            <input type="text" name="speed_load" className={styles.input} placeholder="예: 101 V" style={{ padding: '0.4rem' }} />
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
-            <label style={{ fontSize: '0.85rem', fontWeight: 700 }}>단가 (원)</label>
-            <input type="number" name="price" className={styles.input} required />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+            <label style={{ fontSize: '0.75rem', fontWeight: 700 }}>Ply (P)</label>
+            <input type="text" name="ply_rating" className={styles.input} placeholder="예: 4P" style={{ padding: '0.4rem' }} />
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
-            <label style={{ fontSize: '0.85rem', fontWeight: 700 }}>초기 재고</label>
-            <input type="number" name="stock" className={styles.input} required />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+            <label style={{ fontSize: '0.75rem', fontWeight: 700 }}>DOT</label>
+            <input type="text" name="dot" className={styles.input} placeholder="예: 2424" style={{ padding: '0.4rem' }} />
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+            <label style={{ fontSize: '0.75rem', fontWeight: 700 }}>생산지</label>
+            <input type="text" name="origin" className={styles.input} placeholder="예: 베트남" style={{ padding: '0.4rem' }} />
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+            <label style={{ fontSize: '0.75rem', fontWeight: 700 }}>단가 (원)</label>
+            <input type="number" name="price" className={styles.input} style={{ padding: '0.4rem' }} required />
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+            <label style={{ fontSize: '0.75rem', fontWeight: 700 }}>초기 재고</label>
+            <input type="number" name="stock" className={styles.input} style={{ padding: '0.4rem' }} required />
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem', gridColumn: 'span 2' }}>
+            <label style={{ fontSize: '0.75rem', fontWeight: 700 }}>단축 설명</label>
+            <input type="text" name="description" className={styles.input} placeholder="상품에 대한 간략한 설명" style={{ padding: '0.4rem' }} />
           </div>
         </div>
         
