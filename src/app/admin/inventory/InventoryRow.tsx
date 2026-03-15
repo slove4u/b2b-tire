@@ -37,7 +37,7 @@ export default function InventoryRow({ product }: { product: Product }) {
 
   return (
     <tr>
-      <td>{product.isEvent && <span style={{ color: '#ef4444', fontSize: '0.7rem', fontWeight: 900, border: '1px solid #ef4444', padding: '1px 4px', borderRadius: '4px', verticalAlign: 'middle', marginRight: '4px' }}>EVENT</span>}<div style={{fontWeight: 700, display: 'inline-block'}}>{product.brand}</div></td>
+      <td>{product.isEvent && <span style={{ color: '#ef4444', fontSize: '0.65rem', fontWeight: 900, border: '1px solid #ef4444', padding: '1px 3px', borderRadius: '3px', verticalAlign: 'middle', marginRight: '3px' }}>EVENT</span>}<div style={{fontWeight: 700, display: 'inline'}}>{product.brand}</div></td>
       <td>{product.tire_name}</td>
       <td><div style={{fontWeight: 700}}>{product.spec}</div></td>
       

@@ -169,7 +169,12 @@
   }
   
   .table {
-    min-width: 1000px; /* Force scroll for 10 columns visibility */
+    min-width: 800px; /* Reduced to scroll less */
+  }
+
+  .table th, .table td {
+    padding: 0.4rem 0.3rem; /* Compact padding */
+    font-size: 0.8rem; /* Smaller font */
   }
 
   .formCard {

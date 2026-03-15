@@ -242,3 +242,35 @@
   background: #fee2e2;
   color: #ef4444;
 }
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+  .formCard, .listSection {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  .container > div {
+    grid-template-columns: 1fr !important; /* Stack columns */
+    gap: 1.5rem !important;
+  }
+  .input, .textarea {
+    padding: 0.6rem;
+  }
+  .submitBtn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  .noticeItem {
+    padding: 0.8rem;
+  }
+  .listTitle {
+    font-size: 0.95rem;
+  }
+  .listContent {
+    font-size: 0.85rem;
+    margin-top: 4px;
+    margin-bottom: 8px;
+  }
+}
