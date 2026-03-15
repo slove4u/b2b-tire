@@ -202,3 +202,39 @@
   color: #999;
   font-style: italic;
 }
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+  .dashboardHeader {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  .statCard {
+    padding: 1rem;
+  }
+  .statValue {
+    font-size: 1.5rem;
+  }
+  .table th, .table td {
+    padding: 0.6rem 0.4rem;
+    font-size: 0.75rem;
+  }
+  .clientName {
+    font-size: 0.7rem;
+  }
+  .typeBadge {
+    padding: 0.1rem 0.4rem;
+    font-size: 0.7rem;
+  }
+  .searchBar {
+    padding: 0.8rem;
+  }
+  .searchField {
+    width: 100%;
+  }
+  .searchBtn {
+    width: 100%;
+  }
+}
