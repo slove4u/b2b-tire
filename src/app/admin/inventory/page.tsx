@@ -1,3 +1,7 @@
+import prisma from '@/lib/prisma'
+import ProductForm from './ProductForm'
+import InventorySearch from './InventorySearch'
+import styles from './inventory.module.css'
 import InventoryRow from './InventoryRow'
 
 export default async function InventoryPage({

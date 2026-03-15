@@ -1,6 +1,4 @@
-import prisma from '@/lib/prisma'
-import { createAdminAccount, deleteAdminAccount, updateAdminPassword } from './actions'
-import styles from '../inventory/inventory.module.css' // Reuse styles
+import AdminRow from './AdminRow'
 
 export default async function AdminAccountsPage() {
   const admins = await prisma.user.findMany({
@@ -28,7 +26,7 @@ export default async function AdminAccountsPage() {
           <input type="text" name="loginId" placeholder="아이디" className={styles.input} required />
           <input type="password" name="password" placeholder="비밀번호" className={styles.input} required />
           <input type="text" name="name" placeholder="이름(담당자)" className={styles.input} required />
-          <button type="submit" style={{ background: 'var(--color-navy)', color: '#fff', borderRadius: '4px', fontWeight: 700 }}>추가하기</button>
+          <button type="submit" style={{ background: 'var(--color-navy)', color: '#fff', border: 'none', padding: '0.6rem', borderRadius: '4px', fontWeight: 700, cursor: 'pointer' }}>추가하기</button>
         </form>
       </div>
 
@@ -44,21 +42,7 @@ export default async function AdminAccountsPage() {
           </thead>
           <tbody>
             {admins.map(admin => (
-              <tr key={admin.id}>
-                <td>{admin.name}</td>
-                <td>{admin.loginId}</td>
-                <td>
-                  <form action={async (formData) => { 'use server'; await updateAdminPassword(admin.id, formData); }} style={{ display: 'flex', gap: '4px' }}>
-                    <input type="password" name="password" placeholder="새 비밀번호" className={styles.input} style={{ width: '120px' }} required />
-                    <button type="submit" style={{ background: '#3b82f6', color: '#fff', padding: '0.4rem 0.6rem', borderRadius: '4px', fontSize: '0.85rem' }}>변경</button>
-                  </form>
-                </td>
-                <td>
-                  <form action={async () => { 'use server'; if(confirm('이 관리자 계정을 삭제하시겠습니까?')) await deleteAdminAccount(admin.id); }}>
-                    <button type="submit" style={{ color: '#ef4444', fontWeight: 700 }}>삭제</button>
-                  </form>
-                </td>
-              </tr>
+              <AdminRow key={admin.id} admin={admin} />
             ))}
           </tbody>
         </table>
