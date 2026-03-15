@@ -124,3 +124,40 @@
 .searchBtn:hover {
   opacity: 0.9;
 }
+.editableInput {
+  padding: 0.5rem;
+  border: 2px solid #3b82f6;
+  border-radius: 4px;
+  background: #eff6ff;
+  font-weight: 700;
+  outline: none;
+}
+
+.editBtn {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  font-weight: 700;
+  border: 1px solid #d1d5db;
+}
+
+.editBtn:hover {
+  background: #e5e7eb;
+}
+
+.cancelBtn {
+  background: #9ca3af;
+  color: white;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.saveColBtn {
+  background: #2563eb;
+  color: white;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  font-weight: 700;
+}

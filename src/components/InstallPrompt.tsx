@@ -10,8 +10,10 @@ export default function InstallPrompt() {
 
   useEffect(() => {
     // Check if already installed
-    if (window.matchMedia('(display-mode: standalone)').matches || (window.navigator as any).standalone) {
+    const isStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || (window.navigator as any).standalone
+    if (isStandaloneMode) {
       setIsStandalone(true)
+      setIsVisible(false)
       return
     }
 

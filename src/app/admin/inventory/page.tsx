@@ -1,10 +1,4 @@
-import prisma from '@/lib/prisma'
-import { updateProduct } from './actions'
-import ProductForm from './ProductForm'
-import DeleteButton from './DeleteButton'
-import InventorySearch from './InventorySearch'
-import styles from './inventory.module.css'
-
+import InventoryRow from './InventoryRow'
 
 export default async function InventoryPage({
   searchParams,
@@ -45,46 +39,7 @@ export default async function InventoryPage({
           </thead>
           <tbody>
             {products.map(product => (
-              <tr key={product.id}>
-                <td>{product.brand}</td>
-                <td style={{ fontWeight: 700 }}>{product.spec}</td>
-                <td>{product.pattern}</td>
-                <td>
-                  <form id={`edit-form-${product.id}`} action={async (formData) => { 'use server'; await updateProduct(product.id, formData); }}></form>
-                  <input 
-                    form={`edit-form-${product.id}`}
-                    type="text" 
-                    name="dot" 
-                    defaultValue={product.dot || ''} 
-                    className={styles.input}
-                    style={{ width: '60px' }}
-                  />
-                </td>
-                <td>
-                  <input 
-                    form={`edit-form-${product.id}`}
-                    type="number" 
-                    name="price" 
-                    defaultValue={product.price} 
-                    className={styles.input}
-                  />
-                </td>
-                <td>
-                  <input 
-                    form={`edit-form-${product.id}`}
-                    type="number" 
-                    name="stock" 
-                    defaultValue={product.stock} 
-                    className={styles.input}
-                  />
-                </td>
-                <td>
-                  <div style={{ display: 'flex', gap: '4px' }}>
-                    <button form={`edit-form-${product.id}`} type="submit" className={styles.saveBtn}>저장</button>
-                    <DeleteButton id={product.id} />
-                  </div>
-                </td>
-              </tr>
+              <InventoryRow key={product.id} product={product} />
             ))}
           </tbody>
         </table>

@@ -38,6 +38,10 @@ export default async function AdminLayout({ children }: { children: ReactNode })
             <span>🏢</span>
             <span>거래처 계정관리</span>
           </Link>
+          <Link href="/admin/accounts" className={styles.navItem}>
+            <span>🔐</span>
+            <span>관리자 계정관리</span>
+          </Link>
         </nav>
 
         <form action={async () => {

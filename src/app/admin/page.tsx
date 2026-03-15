@@ -75,6 +75,13 @@ export default async function AdminDashboard() {
             <span style={{ fontSize: '0.85rem', color: '#be123c' }}>전체 공지 및 필독 메시지 관리</span>
           </div>
         </Link>
+        <Link href="/admin/accounts" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div style={{ ...cardStyle, borderLeftColor: '#10B981', background: '#ecfdf5' }}>
+            <span style={{ fontSize: '1.2rem' }}>🔐</span>
+            <span style={{ fontWeight: 800, fontSize: '1.1rem' }}>관리자 계정 관리</span>
+            <span style={{ fontSize: '0.85rem', color: '#059669' }}>관리자 아이디 및 비밀번호 관리</span>
+          </div>
+        </Link>
       </div>
 
       <p style={{ color: 'var(--color-grey)', marginTop: '0.5rem', fontWeight: 700 }}>📊 전체 현황 요약</p>
