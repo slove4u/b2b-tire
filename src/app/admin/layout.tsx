@@ -57,6 +57,7 @@ export default async function AdminLayout({ children }: { children: ReactNode })
       <main className={styles.main}>
         {children}
       </main>
+      <AdminNotification />
     </div>
   )
 }

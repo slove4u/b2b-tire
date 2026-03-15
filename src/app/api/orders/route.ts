@@ -16,7 +16,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ message: '장바구니가 비어있습니다.' }, { status: 400 })
     }
 
-    // Wrap in a Prisma Transaction to ensure atomic stock decrement
+    // Wrap in a Prisma Transaction to ensure atomic order creation
     const order = await prisma.$transaction(async (tx) => {
       // 1. Create the Order
       const newOrder = await tx.order.create({
@@ -33,28 +33,6 @@ export async function POST(request: Request) {
           }
         }
       })
-
-      // 2. Decrement Stock for each Product and record transaction
-      for (const item of items) {
-        const product = await tx.product.findUnique({ where: { id: item.id } })
-        if (!product || product.stock < item.quantity) {
-          throw new Error(`[${item.spec}] 재고가 부족합니다.`)
-        }
-
-        await tx.product.update({
-          where: { id: item.id },
-          data: { stock: product.stock - item.quantity }
-        })
-
-        await tx.stockTransaction.create({
-          data: {
-            productId: item.id,
-            type: 'OUT',
-            quantity: item.quantity,
-            note: `B2B 발주 출고 (주문번호: ${newOrder.id})`
-          }
-        })
-      }
 
       return newOrder
     })

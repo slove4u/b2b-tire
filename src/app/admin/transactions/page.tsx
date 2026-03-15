@@ -4,6 +4,7 @@ import TransactionForm from './TransactionForm'
 import { deleteTransaction } from './actions'
 import DeleteButton from './DeleteButton' // We'll create this helper client component
 import Link from 'next/link'
+import ExcelExportButton from './ExcelExportButton'
 
 
 export default async function TransactionsPage({
@@ -105,7 +106,10 @@ export default async function TransactionsPage({
           <label>종료일</label>
           <input type="date" name="end" defaultValue={end} className={styles.input} />
         </div>
-        <button type="submit" className={styles.searchBtn}>검색하기</button>
+        <div style={{ display: 'flex', gap: '8px' }}>
+          <button type="submit" className={styles.searchBtn}>검색하기</button>
+          <ExcelExportButton data={transactions} />
+        </div>
       </form>
 
       <div className={styles.tableContainer}>
