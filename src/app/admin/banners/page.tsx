@@ -1,8 +1,6 @@
-import { PrismaClient } from '@prisma/client'
 import { createBanner, deleteBanner, updateBanner } from './actions'
+import prisma from '@/lib/prisma'
 import styles from './banners.module.css'
-
-const prisma = new PrismaClient()
 
 export default async function BannersPage() {
   const banners = await prisma.banner.findMany({

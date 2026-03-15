@@ -1,11 +1,10 @@
-import { PrismaClient } from '@prisma/client'
+import prisma from '@/lib/prisma'
 import { updateProduct } from './actions'
 import ProductForm from './ProductForm'
 import DeleteButton from './DeleteButton'
 import InventorySearch from './InventorySearch'
 import styles from './inventory.module.css'
 
-const prisma = new PrismaClient()
 
 export default async function InventoryPage({
   searchParams,

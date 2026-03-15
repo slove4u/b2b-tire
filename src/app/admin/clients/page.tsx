@@ -1,9 +1,9 @@
-import { PrismaClient } from '@prisma/client'
+import prisma from '@/lib/prisma'
+import Link from 'next/link'
 import ClientForm from './ClientForm'
 import ClientActions from './ClientActions'
 import styles from './clients.module.css'
 
-const prisma = new PrismaClient()
 
 export default async function AdminClientsPage() {
   const clients = await prisma.user.findMany({

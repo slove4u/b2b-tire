@@ -1,8 +1,7 @@
-import { PrismaClient } from '@prisma/client'
+import prisma from '@/lib/prisma'
 import { createNotice, deleteNotice, updateNotice } from './actions'
 import styles from './notices.module.css'
 
-const prisma = new PrismaClient()
 
 export default async function NoticesPage() {
   const notices = await prisma.notice.findMany({

@@ -1,7 +1,5 @@
-import { PrismaClient } from '@prisma/client'
+import prisma from '@/lib/prisma'
 import ClientPage from './ClientPage'
-
-const prisma = new PrismaClient()
 
 export default async function Page() {
   const banners = await prisma.banner.findMany({

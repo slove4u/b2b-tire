@@ -1,9 +1,8 @@
-import { PrismaClient } from '@prisma/client'
+import prisma from '@/lib/prisma'
 import Link from 'next/link'
 import BannerCarousel from '@/components/BannerCarousel'
 import NoticeWidget from '@/components/NoticeWidget'
 
-const prisma = new PrismaClient()
 
 export default async function AdminDashboard() {
   const banners = await prisma.banner.findMany({

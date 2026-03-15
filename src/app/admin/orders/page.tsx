@@ -1,7 +1,6 @@
-import { PrismaClient } from '@prisma/client'
+import prisma from '@/lib/prisma'
+import styles from './orders.module.css'
 import ClientOrderList from './ClientOrderList'
-
-const prisma = new PrismaClient()
 
 export default async function AdminOrdersPage() {
   const orders = await prisma.order.findMany({

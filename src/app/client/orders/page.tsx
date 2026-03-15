@@ -1,9 +1,7 @@
-import { PrismaClient } from '@prisma/client'
 import { verifySession } from '@/lib/session'
 import { redirect } from 'next/navigation'
+import prisma from '@/lib/prisma'
 import styles from './orders.module.css'
-
-const prisma = new PrismaClient()
 
 function translateStatus(status: string) {
   switch(status) {

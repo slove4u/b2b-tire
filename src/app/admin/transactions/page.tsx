@@ -1,11 +1,10 @@
-import { PrismaClient } from '@prisma/client'
+import prisma from '@/lib/prisma'
 import styles from './transactions.module.css'
 import TransactionForm from './TransactionForm'
 import { deleteTransaction } from './actions'
 import DeleteButton from './DeleteButton' // We'll create this helper client component
 import Link from 'next/link'
 
-const prisma = new PrismaClient()
 
 export default async function TransactionsPage({
   searchParams,

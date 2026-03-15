@@ -1,9 +1,8 @@
 'use server'
 
-import { PrismaClient } from '@prisma/client'
+import { revalidatePath } from 'next/cache'
+import prisma from '@/lib/prisma'
 import { createSession } from '@/lib/session'
-
-const prisma = new PrismaClient()
 
 export async function login(prevState: any, formData: FormData) {
   const loginId = formData.get('loginId') as string
