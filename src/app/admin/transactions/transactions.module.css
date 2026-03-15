@@ -202,7 +202,18 @@
   color: #999;
   font-style: italic;
 }
+.memoTd {
+  color: #666;
+  font-size: 0.85rem;
+  max-width: 150px;
+}
+
 @media (max-width: 768px) {
+  .memoTd {
+    font-size: 0.65rem;
+    max-width: 80px;
+    word-break: break-all;
+  }
   .title {
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
@@ -219,7 +230,12 @@
   }
   .table th, .table td {
     padding: 0.6rem 0.4rem;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
+  }
+  .table td:first-child {
+    font-size: 0.6rem;
+    white-space: normal;
+    min-width: 60px;
   }
   .clientName {
     font-size: 0.7rem;

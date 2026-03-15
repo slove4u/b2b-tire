@@ -90,33 +90,34 @@
   }
   
   .navMenu {
-    flex-direction: row;
-    overflow-x: auto;
-    padding-bottom: 0.5rem;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  
-  .navMenu::-webkit-scrollbar {
-    display: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 0.5rem 0;
   }
   
   .navItem {
-    white-space: nowrap;
-    padding: 0.6rem 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    font-size: 0.9rem;
+    padding: 0.5rem 0.2rem;
+    background: rgba(255, 255, 255, 0.08);
+    font-size: 0.7rem;
     flex-direction: column;
     gap: 4px;
-    min-width: 80px;
+    min-width: 0;
     justify-content: center;
+    border-radius: 6px;
+    text-align: center;
+  }
+
+  .navItem span:last-child {
+    line-height: 1.1;
+    word-break: keep-all;
   }
 
   .navItem span:first-child {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   
   .logoutBtn {
-    display: none; /* Requested to move to dashboard bottom on mobile */
+    display: none;
   }
 }

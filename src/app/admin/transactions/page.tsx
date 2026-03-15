@@ -148,7 +148,7 @@ export default async function TransactionsPage({
                 <td className={t.type === 'IN' ? styles.qtyIn : styles.qtyOut} style={{ fontSize: '1.1rem' }}>
                   {t.type === 'IN' ? '+' : '-'}{t.quantity.toLocaleString()}
                 </td>
-                <td style={{ color: '#666', fontSize: '0.85rem', maxWidth: '150px' }}>{t.note}</td>
+                <td className={styles.memoTd}>{t.note?.replace(/\(주문번호:.*\)/, '').trim()}</td>
                 <td>
                   <DeleteButton id={t.id} />
                 </td>
